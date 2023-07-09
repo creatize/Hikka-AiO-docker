@@ -1,4 +1,4 @@
-FROM python:3.8-slim as python-base
+FROM python:3.10.12-slim as python-base
 
 # ENV
 ENV DOCKER=true
