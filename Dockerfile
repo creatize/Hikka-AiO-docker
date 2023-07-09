@@ -25,7 +25,7 @@ RUN apt-get install -y nodejs
 RUN rm -r nodesource_setup.sh
 
 RUN mkdir /data
-RUN git clone https://github.com/hikariatama/Hikka /data/Hikka
+RUN git clone -b v1.5.3 https://github.com/hikariatama/Hikka /data/Hikka
 WORKDIR /data/Hikka
 
 RUN pip install --no-warn-script-location --no-cache-dir -U -r requirements.txt
