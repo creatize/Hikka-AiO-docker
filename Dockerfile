@@ -1,4 +1,4 @@
-FROM python:3.8-slim as python-base
+FROM python:3.10.12-slim as python-base
 
 # ENV
 ENV DOCKER=true
@@ -23,6 +23,10 @@ RUN curl -sL https://deb.nodesource.com/setup_18.x -o nodesource_setup.sh
 RUN bash nodesource_setup.sh
 RUN apt-get install -y nodejs
 RUN rm -r nodesource_setup.sh
+
+# speedtest
+RUN curl -s https://packagecloud.io/install/repositories/ookla/speedtest-cli/script.deb.sh | bash
+RUN apt-get install speedtest
 
 RUN mkdir /data
 RUN git clone -b v1.5.3 https://github.com/hikariatama/Hikka /data/Hikka
