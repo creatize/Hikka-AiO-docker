@@ -24,6 +24,10 @@ RUN bash nodesource_setup.sh
 RUN apt-get install -y nodejs
 RUN rm -r nodesource_setup.sh
 
+# speedtest
+RUN curl -s https://packagecloud.io/install/repositories/ookla/speedtest-cli/script.deb.sh | bash
+RUN apt-get install -y speedtest
+
 RUN mkdir /data
 RUN git clone -b v1.6.2 https://github.com/hikariatama/Hikka /data/Hikka
 WORKDIR /data/Hikka
